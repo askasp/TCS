@@ -1,0 +1,84 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:regular,bold,italic&subset=latin,latin-ext');
+
+
+@media screen{*,*:after,*:before{-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+box-sizing:border-box}}*{margin:auto;
+padding:auto}*{margin:0;
+padding:0}
+.wrap{
+    background:#2e2e2e;
+    width:100vw;
+    height:auto;
+    top:0;
+    min-height:100vh;
+    overflow-y:scroll;
+}
+
+    h2{color:#E0E0E0;
+    font-size:40px;
+    font-weight:lighter;
+    background:#464646;
+    margin:auto;
+    font-family:montserrat;
+    padding:0px;
+    text-align:center}
+
+div{
+    font-family:Montserrat
+}
+
+h5{
+   font-size:25px;
+   font-weight:550;
+  } 
+  
+
+.readmorebutton {
+  background-color: rgba(0, 0, 0, 0);
+  padding: 15px, 32px;
+  height: 36px;
+  width: 100px;
+  border: 0px;
+  margin-top: 20%;
+  text-decoration: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #d66d5f;
+  text-align: center;
+  align-content: center;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
+.createcharactercard {
+  margin: 20px;
+  margin-top: 0%;
+  margin-bottom: 5%;
+  width: 90vw;
+  min-height: 50vh;
+  background: #ffffff;
+  padding-top: 7%;
+  padding-bottom: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-radius: 4px;
+  z-index: 0;
+}
+
+.createcharactercard > heading {
+  font-size: 18px;
+  color: black;
+  font-weight: 550;
+}
+.createcharactercard > body {
+  color: #000000;
+  background: white;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  z-index: 0;
+}
