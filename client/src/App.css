@@ -90,11 +90,8 @@ a:hover {
 }
 
 .createcharactercard {
-  margin: 20px;
-
-  margin-top: 5%;
-  margin-bottom: 1%;
-  width: 85vw;
+  margin:5%;
+  width: 90%;
   background: #ffffff;
   padding-top: 7%;
   padding-bottom: 5%;

@@ -61,7 +61,7 @@ class CompanyPage extends React.Component {
 
 
     return (
-      <div style={{background:'#b71c1c', overflowY: "scroll", marginTop: "5%" }}>
+      <div style={{background:'#b71c1c', overflowY: "scroll", marginTop: "20%" }}>
           <div className="createcharactercard">
               <heading> New Thesis </heading>
               {myTextField("Company")}
