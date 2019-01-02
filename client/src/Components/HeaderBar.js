@@ -21,7 +21,7 @@ export function HeaderBar(){
 
 
 const headerbar = {
-    height:'10%',
+    height:'7%',
     display:'flex',
     backgroundColor:'#7f0000',
     width:'100%',

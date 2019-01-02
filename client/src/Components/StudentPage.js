@@ -29,7 +29,7 @@ const options = [
     { label: "Another root option", value: "value_4" }
   ];
 
-const url = 'http://'+ip+':12345/graphql?query={theses(company:""){title,summary,company}}' 
+const url = 'http://'+ip+':12345/graphql?query={theses(company:""){title,summary,company,image}}' 
 
 class StudentPage extends React.Component {
   constructor(props) {
@@ -50,9 +50,10 @@ class StudentPage extends React.Component {
         let tmp = json.data.theses.map(item => 
             <Center>
           <div className="createcharactercard">
-              <heading> {item.company} </heading>
-              <SheetHeader name={item.title}/>
+              <heading style={{background:'rgba(47,62,158,1)',padding:"2%",color:'white',position:'relative',top:"5px",zIndex:'99',}}> {item.company} </heading>
+              <img width={'100%'} src={item.image} style={{position:"relative", top:"-27px"}} />
         <body>
+              <SheetHeader name={item.title}/>
             {item.summary}
         </body>
         <button className="readmorebutton"> Read more </button>
@@ -100,7 +101,7 @@ class StudentPage extends React.Component {
 
 
 const SheetHeader = props => (
-	<p style={{ paddingBottom: "20px", paddingTop: "5px" }}>{props.name}</p>
+	<p style={{fontWeight:'600',marginBottom: "2%", marginTop:'2%' }}>{props.name}</p>
 )
 
 

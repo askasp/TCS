@@ -18,16 +18,14 @@ class App extends Component {
         <div>
         <div className="wrap" style={{zIndex:'999',backgroundSize:'cover',backgroundPosition:'center',height:'100%',backgroundImage: `url(${Background})`}}>
         <header className="App-header" />
-          <WelcomeCard/>
-      </div>
-          <StudentPage/>
           <BrowserRouter>
         <body>
-          <HeaderBar />
-          <FooterBar/>
+        <Route path="/" component={HeaderBar} />
+        <Route path="/" component={FooterBar} />
+        <Route exact path="/" component={RootPage} />
         </body>
           </BrowserRouter>
-
+      </div>
       </div>
     );
   }
@@ -35,19 +33,29 @@ class App extends Component {
 
 export default App;
 
+const RootPage = () =>(
+    <div>
+        <div className="wrap" style={{zIndex:'999',backgroundSize:'cover',backgroundPosition:'center',height:'100%',backgroundImage: `url(${Background})`}}>
+        <WelcomeCard/>
+    </div>
+          <StudentPage/>
+        <CompanyPage/>
+    </div>
+)
+
+
+
 const WelcomeCard = () =>(
     <div style={{marginTop:'50vh',marginBottom:'10vh'}}>
     <Center>
-			<div className="createcharactercard">
-                <Center>
-                <body style={{fontWeight:'600',fontSize:'20px'}}> Welcome to TCS, matching master students with companies. It's like Tinder, but with a far greater chance of getting fucked! </body>
-            </Center>
+			<div className="createcharactercard" style={{background:'rgba(183,28,28,0.9)'}}>
+                <body style={{background:"rgba(0,0,0,0.0)",color:"white",fontWeight:'600',fontSize:'20px'}}> Welcome to TCS, matching master students with companies. It's like Tinder, but with a far greater chance of getting fucked! 
 				<Center>
     <button class="btn btn-block btn-social btn-linkedin" style={{margin:'3%'}}>
     <span class="fa fa-linkedin"></span> Sign in with Linkedin
     </button>
 				</Center>
-
+</body>
 			</div>
         </Center>
 			</div>

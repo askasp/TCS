@@ -34,7 +34,7 @@ class CompanyPage extends React.Component {
   }
 
   handleSubmit() {
-      let url = 'http://localhost:12345/graphql?query=mutation+_{createThesis(id:"15",title:"'+this.state.thesis.Title+'",summary:"'+this.state.thesis.Summary+'",company:"'+this.state.thesis.Company+'"){title,summary}}' 
+      let url = 'http://localhost:12345/graphql?query=mutation+_{createThesis(id:"15",title:"'+this.state.thesis.Title+'",summary:"'+this.state.thesis.Summary+'",company:"'+this.state.thesis.Company+'",image:"'+this.state.thesis.Image+'"){title,summary}}' 
 
 
     const request = async () => {
@@ -63,14 +63,19 @@ class CompanyPage extends React.Component {
 
 
     return (
-      <div style={{background:'#b71c1c', overflowY: "scroll", marginTop: "20%" }}>
+      <div style={{paddingTop:"10%",background:'#b71c1c', overflowY: "scroll"}}>
+
           <Center>
-          <div className="createcharactercard">
+              <h3 style={{color:"white"}}> Add Thesis </h3>
+          </Center>
+          <Center>
+          <div style={{padding:'2%',paddingBottom:"10%"}} className="createcharactercard">
               <heading> New Thesis </heading>
               {myTextField("Company")}
               {myTextField("Title")}
               {myTextField("Keywords")}
               {myTextField("Summary")}
+              {myTextField("Image")}
     <Center>
         <button onClick={() => this.handleSubmit()} className="buttonper">
             SUBMIT
