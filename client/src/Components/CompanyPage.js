@@ -13,69 +13,66 @@ import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import classNames from 'classnames';
 
-const url =
-  'http://localhost:12345/graphql?query={theses(company:""){title,summary,company}}';
 
 class CompanyPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       output: [],
-        value:''
+        value:'',
+        thesis:[],
     };
      this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
- handleChange(event) {
-     console.log("event is",event)
-    this.setState({value: event.target.value});
+ handleChange(id,event) {
+     console.log("thesis is",this.state.thesis)
+      let tmp = this.state.thesis
+      tmp[id] = event.target.value
+    this.setState({thesis:tmp});
   }
 
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
+  handleSubmit() {
+      let url = 'http://localhost:12345/graphql?query=mutation+_{createThesis(id:"15",title:"'+this.state.thesis.Title+'",summary:"'+this.state.thesis.Summary+'",company:"'+this.state.thesis.Company+'"){title,summary}}' 
+
+
+    const request = async () => {
+      const response = await fetch(url);
+      const json = await response.json();
+      console.log("json is ", json);
+
+  }
+      request()
+      alert('A Thesis was submitted: ' + this.state.value);
   }
 
   render() {
-    return (
-      <div style={{ overflowY: "scroll", marginTop: "25%" }}>
-          <div className="createcharactercard">
-              <heading> New Thesis </heading>
+      const myTextField = (name) =>
    <TextField
-          id="standard-textarea"
-          label="Company"
-          placeholder="Not need to inserteed later"
+          id={name}
+          label={name}
+          placeholder={name}
           multiline
           className={classNames.textField}
           margin="normal"
-        />
-   <TextField
-          id="standard-textarea"
-          label="Title"
-          placeholder="Title"
-          multiline
-          className={classNames.textField}
-          margin="normal"
-          onChange={this.handleChange}
-        />
-   <TextField
-          id="standard-textarea"
-          label="Keywords"
-          placeholder="Keywords"
-          multiline
-          className={classNames.textField}
-          margin="normal"
-        /> 
-   <TextField
-          id="standard-textarea"
-          label="Summary"
-          placeholder="Summary"
-          multiline
-          className={classNames.textField}
-          margin="normal"
+          onChange={ (e) => this.handleChange(name,e)}
         />
 
+
+    return (
+      <div style={{background:'#b71c1c', overflowY: "scroll", marginTop: "5%" }}>
+          <div className="createcharactercard">
+              <heading> New Thesis </heading>
+              {myTextField("Company")}
+              {myTextField("Title")}
+              {myTextField("Keywords")}
+              {myTextField("Summary")}
+    <Center>
+        <button onClick={() => this.handleSubmit()} className="buttonper">
+            SUBMIT
+        </button>
+  </Center>
       </div>
       </div>
     );
@@ -88,10 +85,8 @@ const SheetHeader = props => (
 
 export default CompanyPage;
 
-const SearchButton = () => (
-  <button
-    style={{
-      background: "#722f37",
+const SubmitButtonStyle={
+      background: "#ff5722",
       color: "white",
       border: "0px",
       height: "2em",
@@ -100,9 +95,5 @@ const SearchButton = () => (
       marginTop: "5%",
       textAlign: "center",
       textDecoration: "none"
-    }}
-  >
-    {" "}
-    SEARCH{" "}
-  </button>
-);
+}
+

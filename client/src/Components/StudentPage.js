@@ -8,8 +8,11 @@ import AsyncSelect from "react-select/lib/Async";
 import Center from "react-center";
 import "../App.css";
 
+//const ip = '192.168.0.11'
+const ip = 'localhost'
 
-const url = 'http://localhost:12345/graphql?query={theses(company:""){title,summary,company}}' 
+
+const url = 'http://'+ip+':12345/graphql?query={theses(company:""){title,summary,company}}' 
 
 class StudentPage extends React.Component {
   constructor(props) {
@@ -49,7 +52,7 @@ class StudentPage extends React.Component {
   render() {
 
     return (
-        <div style={{overflowY:'scroll',marginTop:"25%"}}>
+        <div style={{background:'#b71c1c',overflowY:'scroll',marginTop:"10%"}}>
           <AsyncSelect
             name="form-field-name"
             valueKey="value"
@@ -60,9 +63,7 @@ class StudentPage extends React.Component {
         styles={WikiSelectStyle2}
             //onChange={this.toggleTooltip}
         components={{ DropdownIndicator }}
-            placeholder={
-                <p style={{color: "black" }}>Filter... </p>
-            }
+            placeholder={"Filter..."}
             isSearchable={true}
           />
           {this.state.output}
@@ -96,18 +97,23 @@ const WikiSelectStyle2 = {
 border: "1px solid #722f37",
       borderRadius:'9999px',
       backgroundColor:'#722f37',
+      height:'1.5em',
+      minHeight:'1.5em',
   }),
 
   container: base => ({
     ...base,
       width:'30%',
+      marginTop:'1%',
       zIndex:'99',
       position:'fixed',
-      top:'3.5%',
+      top:'0%',
       backgroundColor:'white',
         borderRadius:'9999px',
-      right:'5%',
-    border: "1px solid #722f37",
+      right:'2%',
+        border: "1px solid #722f37",
+      height:'1.5em',
+      minHeight:'1.5em',
 
   }),
 
@@ -115,16 +121,17 @@ border: "1px solid #722f37",
         // none of react-selects styles are passed to <View />
         ...base,
         color:"722f37",
-      height:'25px',
-      minHeight:'25px',
-        borderRadius:'9999px',
-    
+      height:'1.5em',
+      minHeight:'1.5em',
+        borderRadius:'9999px', 
         background: "white",
 
     }),
 
  valueContainer: (base) => ({
                 ...base,
+      height:'1.5em',
+      minHeight:'1.5em',
  }),
 
   dropdownIndicator: () => ({

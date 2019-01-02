@@ -27,8 +27,8 @@ export function FooterBar(){
 }
 
 const footerbar = {
-  height: '8%',
-  backgroundColor: '#722f37',
+  height: '5%',
+backgroundColor:'#7f0000',
   position: 'fixed',
   width: '100%',
   zIndex: '9999',
@@ -39,7 +39,7 @@ const footerbar = {
 
 const footerItem ={
     display:'inline-block',
-    margin:'3%',
+    margin:'1%',
     marginLeft:'8%',
     marginRight:'8%',
 }

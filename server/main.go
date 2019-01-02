@@ -3,10 +3,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/graphql-go/graphql"
 	"net/http"
 	"strings"
-
-	"github.com/graphql-go/graphql"
 )
 
 type Company struct {
@@ -66,6 +65,8 @@ func Filter(theses []Thesis, f func(Thesis) bool) []Thesis {
 }
 
 func main() {
+
+	fmt.Println("hei")
 
 	thesisType := graphql.NewObject(graphql.ObjectConfig{
 		Name: "Thesis",
@@ -136,13 +137,11 @@ func main() {
 			}},
 	})
 
-	fmt.Println("hei")
 	schema, _ := graphql.NewSchema(graphql.SchemaConfig{
 		Query:    rootQuery,
 		Mutation: rootMutation,
 	})
 	http.HandleFunc("/graphql", func(w http.ResponseWriter, r *http.Request) {
-
 		(w).Header().Set("Access-Control-Allow-Origin", "*")
 		result := graphql.Do(graphql.Params{
 			Schema:        schema,
@@ -150,7 +149,5 @@ func main() {
 		})
 		json.NewEncoder(w).Encode(result)
 	})
-	fmt.Println("hei")
-
 	http.ListenAndServe(":12345", nil)
 }

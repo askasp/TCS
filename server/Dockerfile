@@ -5,6 +5,7 @@ ENTRYPOINT [ "start" ]
 FROM development as build
 RUN build
 ENTRYPOINT [ "/go/src/app/app" ]
+EXPOSE 12345
 
 FROM scratch as production
 COPY --from=build /go/src/app/app /

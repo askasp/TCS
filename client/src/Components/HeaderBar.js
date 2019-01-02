@@ -22,10 +22,10 @@ export function HeaderBar(){
 
 
 const headerbar = {
-    height:'60px',
+    height:'5%',
     //paddingBottom: "60px",
     display:'flex',
-    backgroundColor:'#722f37',
+    backgroundColor:'#7f0000',
     width:'100%',
     position:'fixed',
     zIndex:'20',
