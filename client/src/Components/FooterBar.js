@@ -11,6 +11,7 @@ import './FooterBar.css'
 
 export function FooterBar(){
 	return(
+        <div style={{marginTop:'8%'}}>
 		<div style={footerbar}>
 			<div style={footerItem}>
                 <Link to="/"> <StarFilledIcon primaryColor={'white'}/></Link>
@@ -22,6 +23,7 @@ export function FooterBar(){
 				<Link to="/"> <img className="fixedImg" src={Features} alt ="logo" /></Link>
 			</div>
 		</div>
+    </div>
 	)
     
 }
@@ -34,7 +36,7 @@ backgroundColor:'#7f0000',
   zIndex: '9999',
   bottom: '0%',
   display: 'flex',
-    justifyContent:'center',
+justifyContent:'center',
 }
 
 const footerItem ={

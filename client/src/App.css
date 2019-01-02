@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:regular,bold,italic&subset=latin,latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic&subset=latin,latin-ext");
 
 @media screen {
   *,
@@ -28,12 +29,10 @@
 }
 
 h2 {
-  color: #e0e0e0;
-  font-size: 40px;
+  color: white;
   font-weight: lighter;
-  background: #464646;
   margin: auto;
-  font-family: montserrat;
+  font-family: Montserrat;
   padding: 0px;
   text-align: center;
 }
@@ -90,13 +89,11 @@ a:hover {
 }
 
 .createcharactercard {
-  margin:5%;
+  margin:1%;
   width: 90%;
+  max-width:600px;
   background: #ffffff;
-  padding-top: 7%;
-  padding-bottom: 5%;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 2%;
   border-radius: 4px;
   z-index: 0;
 }

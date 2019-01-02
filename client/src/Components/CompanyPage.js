@@ -49,6 +49,7 @@ class CompanyPage extends React.Component {
 
   render() {
       const myTextField = (name) =>
+          <Center>
    <TextField
           id={name}
           label={name}
@@ -58,10 +59,12 @@ class CompanyPage extends React.Component {
           margin="normal"
           onChange={ (e) => this.handleChange(name,e)}
         />
+    </Center>
 
 
     return (
       <div style={{background:'#b71c1c', overflowY: "scroll", marginTop: "20%" }}>
+          <Center>
           <div className="createcharactercard">
               <heading> New Thesis </heading>
               {myTextField("Company")}
@@ -74,6 +77,7 @@ class CompanyPage extends React.Component {
         </button>
   </Center>
       </div>
+          </Center>
       </div>
     );
   }

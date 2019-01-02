@@ -11,19 +11,17 @@ export function HeaderBar(){
   return (
     <div>
     <div style={headerbar}>
-        <h5 style={{color:"white"}}>
+        <h2 style={{color:"white"}}>
           TCS
-        </h5>
+        </h2>
     </div>
       </div>
   );
 }
 
 
-
 const headerbar = {
-    height:'5%',
-    //paddingBottom: "60px",
+    height:'10%',
     display:'flex',
     backgroundColor:'#7f0000',
     width:'100%',
@@ -32,7 +30,6 @@ const headerbar = {
     top:'0',
     alignItems:'center',
     justifyContent:'center',
-
 }
 
 

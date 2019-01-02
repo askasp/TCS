@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import terje from "./terje.png";
-import mscott from "./mscott.jpg";
-import tmp from "./lighbulb.jpg";
 import { HeaderBar } from "./Components/HeaderBar.js";
 import { FooterBar } from "./Components/FooterBar.js";
 import  StudentPage  from "./Components/StudentPage.js";
@@ -12,20 +9,22 @@ import Center from "react-center"
 import './bootstrap-social.css'
 //import 'react-bootstrap'
 import './bower_components/font-awesome/css/font-awesome.css'
+import Background from './images/engineering.jpg'
 
 
 class App extends Component {
   render() {
     return (
-      <div className="wrap">
+        <div>
+        <div className="wrap" style={{zIndex:'999',backgroundSize:'cover',backgroundPosition:'center',height:'100%',backgroundImage: `url(${Background})`}}>
         <header className="App-header" />
+          <WelcomeCard/>
+      </div>
+          <StudentPage/>
           <BrowserRouter>
         <body>
           <HeaderBar />
           <FooterBar/>
-          <Route exact path="/" component ={WelcomeCard}/>
-          <Route path="/Student" component ={StudentPage}/>
-          <Route path="/Company" component ={CompanyPage}/>
         </body>
           </BrowserRouter>
 
@@ -37,14 +36,12 @@ class App extends Component {
 export default App;
 
 const WelcomeCard = () =>(
-			<div className="centercard">
-				<p style={{textAlign:"center"}}>Welcome to TCS (Thesis)!</p>
-				<Center>
-					<Link to="/Student" className="buttonper"> <p style={{textAlign:"center"}}> Browse Theses </p> </Link>
-				</Center>
-				<Center>
-					<Link to="/Company" className="buttonper"> <p style={{textAlign:"center"}}> Add Thesis </p> </Link>
-                </Center>
+    <div style={{marginTop:'50vh',marginBottom:'10vh'}}>
+    <Center>
+			<div className="createcharactercard">
+                <Center>
+                <body style={{fontWeight:'600',fontSize:'20px'}}> Welcome to TCS, matching master students with companies. It's like Tinder, but with a far greater chance of getting fucked! </body>
+            </Center>
 				<Center>
     <button class="btn btn-block btn-social btn-linkedin" style={{margin:'3%'}}>
     <span class="fa fa-linkedin"></span> Sign in with Linkedin
@@ -52,8 +49,18 @@ const WelcomeCard = () =>(
 				</Center>
 
 			</div>
+        </Center>
+			</div>
 )
 
+
+//				<Center>
+//					<Link to="/Student" className="buttonper"> <p style={{textAlign:"center"}}> Browse Theses </p> </Link>
+//				</Center>
+//				<Center>
+//					<Link to="/Company" className="buttonper"> <p style={{textAlign:"center"}}> Add Thesis </p> </Link>
+//                </Center>
+//
 const StudentButton = () => (
     <Link to = "/Student"
     style={{
